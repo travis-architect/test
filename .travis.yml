@@ -1,19 +1,8 @@
 jobs:
   include:
-    - os: linux
+    - os: osx
       language: c
-      arch: amd64
-      vm:
-        size: large
       script:
         - clang -coverage -O0 hello_world.c -o hello_world
         - ./hello_world
-    - os: linux
-      language: c
-      dist: xenial
-      arch: amd64
-      vm:
-        size: large
-      script:
-        - clang -coverage -O0 hello_world.c -o hello_world
-        - ./hello_world
+
