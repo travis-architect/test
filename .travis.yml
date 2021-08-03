@@ -1,8 +1,23 @@
 jobs:
   include:
-    - os: osx
-      language: c
-      script:
-        - clang -coverage -O0 hello_world.c -o hello_world
-        - ./hello_world
+    - env: SCRIPT_NAME=travis_test1
+      name: "Testing11"
+      language: cpp
+      script: sleep 50
+      before_script:
+        - nproc
+        - free -m
+      
+os: linux
+vm:
+  size: medium
+before_script:
+  - nproc
+  - free -m
+arch:
+  - amd64
+language: php
+notifications:
+  email:
+    - shairyarbaig@gmail.com
 
