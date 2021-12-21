@@ -1,23 +1,17 @@
+os: linux
+rvm: 2.6.3
 jobs:
   include:
-    - env: SCRIPT_NAME=travis_test1
-      name: "Testing111"
-      language: cpp
-      script: sleep 50
-      before_script:
-        - nproc
-        - free -m
-      
-os: linux
-vm:
-  size: medium
-before_script:
-  - nproc
-  - free -m
-arch:
-  - amd64
-language: php
-notifications:
-  email:
-    - shairyarbaig@gmail.com
+    - stage: "sleep1"
+      script: sleep 10
+    - stage: "sleep2"
+      script: sleep 20
+    - stage: "sleep3"
+      script: sleep 20
+    - stage: "sleep4"
+      script: sleep 20
+    - stage: "sleep5"
+      script: sleep 20
+    - stage: "sleep6"
+      script: sleep 20
 
